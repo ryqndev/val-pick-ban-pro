@@ -1,0 +1,71 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    &>h4 {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        font: 3.2em 'Hyperwave';
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 2rem;
+        transition: color 350ms;
+
+        &.long {
+            font-size: 2em;
+        }
+    }
+
+    &>img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        background-color: var(--champion-pick-bg);
+        filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.7);
+        transition: filter 350ms, opacity 350ms;
+
+        &.no-image {
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &>span {
+        font-family: 'Rubik';
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: fade 750ms alternate infinite ease-in-out;
+    }
+
+    &.none {
+        &>img {
+            background: rgb(1, 10, 19);
+            object-fit: contain;
+        }
+    }
+
+    &:hover {
+        &>img {
+            filter: none;
+        }
+
+        &>h4 {
+            color: var(--accent-primary);
+        }
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

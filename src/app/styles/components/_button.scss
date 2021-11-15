@@ -1,0 +1,24 @@
+button{
+    padding: 15px 30px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px 0px var(--elevation-shadow);
+    color: var(--text-primary);
+    background-color: var(--bg-primary-light-2);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    transition: box-shadow 350ms, background-color 350ms;
+    @media screen and (max-width: 800px) {
+        font-size: 1em;
+    }
+    &:hover {
+        background-color: var(--bg-primary-light-3);
+        color: var(--accent);
+        box-shadow: 1px 1px 5px 1px var(--elevation-shadow);
+    }
+    &:active {
+        box-shadow: 1px 1px 0px 0px var(--elevation-shadow);
+    }
+}
